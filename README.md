@@ -12,6 +12,10 @@ You only need `telepot` for this.
 
 `python3 tg_audio.py`
 
+### TODO
+
+- Enable Video/Document option
+
 ### Screenshots
 
 <img src="screenshots/1.png" style="zoom:30%" />
