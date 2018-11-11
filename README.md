@@ -4,9 +4,10 @@ This script uses Telepot python framework to connect to Telegram's API in order 
 
 ### Requirements
 
-You only need `telepot` for this.
+You only need `telepot` and `requests` for this.
 
 `pip3 install telepot`
+`pip3 install requests`
 
 ### Usage
 
