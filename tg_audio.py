@@ -17,8 +17,7 @@ def get_file_path(token, file_id):
     try:
         file_path = json_doc['result']['file_path']
     except Exception as e:  # Happens when the file size is bigger than the API condition
-        print(e)
-        bot.sendMessage(chat_id, 'Failed for {}'.format(singer, song_name))
+        print('Cannot download a file because the size is more than 20MB')
         return None
 
     return 'https://api.telegram.org/file/bot{}/{}'.format(token, file_path)
@@ -56,6 +55,8 @@ def get_file(msg_list, chat_id):
         # Get file download path
         download_url = get_file_path(bot_token, mp3id)
         mp3file = get(download_url)
+        if download_url is None:
+            continue
 
         if not path.exists(singer_dir):
             mkdir(singer_dir)
